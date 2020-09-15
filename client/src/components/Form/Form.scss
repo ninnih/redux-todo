@@ -1,0 +1,49 @@
+@import "../../variables.scss";
+
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 90%;
+		margin: 0 auto;
+		background-color: lightsteelblue;
+		border-radius: 3px;
+
+		@media (min-width: $breakpoint-sm) {
+			width: 60%;
+		}
+
+		@media (min-width: $breakpoint-md) {
+			width: 40%;
+		}
+	
+		@media (min-width: $breakpoint-lg) {
+			width: 30%;
+		}
+
+		&__title {
+			margin: 10px;
+		}
+
+		&__button {
+			padding: 5px 20px;
+			margin: 10px;
+			border: none;
+			border-radius: 3px;
+			background-color: teal;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background-color: grey;
+			}
+		}
+	}
+}

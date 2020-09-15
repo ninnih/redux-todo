@@ -1,11 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleTodo, deleteTodo } from '../../js/actions/index';
+import './List.scss'
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 const List = () => {
 	const articles = useSelector(state => state)
 	const dispatch = useDispatch()
-	console.log(articles)
 
 	const toggle = (e) => {
 		e.preventDefault()
@@ -13,15 +15,15 @@ const List = () => {
 	}
 
 	const deleteArticle = (e) => {
-		dispatch(deleteTodo(e.target.className))
+		dispatch(deleteTodo(e.target.id))
 	}
 
 	return(
-		<ul>
+		<ul className="list">
 		{articles ? articles.map(item => (
-			<article className="todoitem">
-				<li key={item.id} id={item.id} className="todoitem__text" onClick={toggle}>{item.title}</li>
-				<button className={item.id} id="todo__button" onClick={deleteArticle}>X</button>
+			<article className="list__item" key={item.id} id={item.id} onClick={toggle}>
+				<li className="list__item__text" >{item.title}</li>
+				<article className="list__item__icon"><CheckCircleIcon className={`list__item__icon list__item__icon--${item.completed}`} /><CancelIcon id={item.id} className="list__item__icon list__item__icon--close" onClick={deleteArticle}/></article>
 			</article>
 				)
 			)

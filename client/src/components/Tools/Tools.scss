@@ -1,0 +1,35 @@
+@import "../../variables.scss";
+
+.tools {
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px;
+	display: flex;
+	justify-content: flex-end;
+
+	@media (min-width: $breakpoint-sm) {
+		width: 60%;
+	}
+
+	@media (min-width: $breakpoint-md) {
+		width: 40%;
+	}
+
+	@media (min-width: $breakpoint-lg) {
+		width: 30%;
+	}
+
+	button {
+    padding: 5px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 3px;
+    background-color: grey;
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+
+		&:hover {
+			background-color: lightsteelblue;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+
+.list {
+	min-height: 200px;
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: whitesmoke;
+	list-style-type: none;
+
+	@media (min-width: $breakpoint-sm) {
+		width: 60%;
+	}
+
+	@media (min-width: $breakpoint-md) {
+		width: 40%;
+	}
+
+	@media (min-width: $breakpoint-lg) {
+		width: 30%;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: calc(100% - 20px);
+		margin: 5px 10px;
+		padding: 10px;
+		background-color: white;
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+
+		&:hover {
+			background-color: lightblue;
+		}
+
+		&__icon {
+			transition: all 0.3s ease-in-out;
+			color: grey;
+
+			svg {
+
+			}
+
+			&--close {
+				&:hover {
+					color: red;
+				}
+			}
+
+			&--true {
+				color: lightseagreen;
+				&:hover {
+
+				}
+			}
+		}
+
+		&__text {
+			text-transform: capitalize;
+		}
+	}
+}
