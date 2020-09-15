@@ -1,20 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleTodo } from '../../js/actions/index';
 
-const mapStateToProps = state => {
-	return {
-		articles: state.articles
-	}
+const List = () => {
+const articles = useSelector(state => state)
+const dispatch = useDispatch()
+console.log(articles)
+
+const toggle = (e) => {
+	e.preventDefault()
+	dispatch(toggleTodo(e.target.id))
 }
-
-const ConnectedList = ( { articles } ) => (
-	<ul>
-		{articles.map(item => (
-			<li key={item.id}>{item.title}</li>
-		))}
-	</ul>
-)
-
-const List = connect(mapStateToProps)(ConnectedList)
+	return(
+		<ul>
+		{articles ? articles.map(item => (
+			<li key={item.id} id={item.id} onClick={toggle}>{item.title}</li>
+				)
+			)
+			: null}
+		</ul>
+	)
+}
 
 export default List;

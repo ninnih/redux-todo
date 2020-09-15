@@ -1,17 +1,22 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addArticle } from '../../js/actions/index';
-
+const uuid = require('uuid-v4');
 
 export const Form = () => {
 	const [input, setInput] = React.useState({ 
-		title: '' 
+		title: '',
+		id: uuid(),
+		complete: false
 	})
+	
 	const dispatch = useDispatch()
 
 	const handleChange = e => {
 		setInput({
-			[e.target.id]: e.target.value
+			[e.target.id]: e.target.value,
+			id: uuid(),
+			complete: false
 		})
 	}
 
@@ -20,9 +25,8 @@ export const Form = () => {
 		dispatch(addArticle(input))
 	}
 	return (
-		<div>
+		<section>
 			<form onSubmit={handleSubmit}>
-        <div>
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -30,10 +34,9 @@ export const Form = () => {
             value={input.title}
             onChange={handleChange}
           />
-        </div>
         <button type="submit">SAVE</button>
       </form>
-		</div>
+		</section>
 	)
 }
 
