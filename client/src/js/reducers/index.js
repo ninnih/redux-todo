@@ -16,30 +16,11 @@ const rootReducer = (state = initialState, action) => {
 
 		case TOGGLE_TODO:
 		return state.map(todo =>
-        todo.id === action.payload.id ? { ...todo, completed: !todo.completed } : todo
+        todo.id === action.payload ? { ...todo, completed: !todo.completed } : todo
       )
     default:
       return state
   }
 }
-
-// 	if(action.type === ADD_TODO) {
-// 		console.log(action.payload)
-// 		return {...state, articles: state.articles.concat(action.payload)}
-// 	}
-
-// 	if(action.type === TOGGLE_TODO) {
-// 		return state.articles.map(item => {
-// 			if(item.id !== action.payload) {
-// 				return state;
-// 			}
-// 			return {
-// 				...state, 
-// 				complete: !state.complete
-// 			}
-// 		}) 
-// 	}
-// 		return state;
-// }
 
 export default rootReducer;
