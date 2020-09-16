@@ -14,7 +14,7 @@
 		align-items: center;
 		width: 90%;
 		margin: 0 auto;
-		background-color: lightsteelblue;
+		background-color: lightseagreen;
 		border-radius: 3px;
 
 		@media (min-width: $breakpoint-sm) {
@@ -40,6 +40,7 @@
 			border-radius: 3px;
 			background-color: teal;
 			transition: all 0.3s ease-in-out;
+			cursor: pointer;
 
 			&:hover {
 				background-color: grey;

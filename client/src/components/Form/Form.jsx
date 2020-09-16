@@ -30,7 +30,9 @@ export const Form = () => {
 	return (
 		<section className="form">
 			<form onSubmit={handleSubmit} className="form__wrapper">
-				<label htmlFor="title" className="form__wrapper__title">Title</label>
+				<label htmlFor="title" className="form__wrapper__title">
+					<h3>Add a task</h3>
+				</label>
 				<input
 					type="text"
 					id="title"

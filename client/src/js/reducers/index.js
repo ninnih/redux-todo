@@ -3,7 +3,7 @@ import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../constants/index';
 const initialState = [];
 
 const rootReducer = (state = initialState, action) => {
-	console.log(action)
+
 	switch (action.type) {
 		case ADD_TODO:
 			return [

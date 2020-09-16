@@ -19,16 +19,26 @@ const List = () => {
 	}
 
 	return(
-		<ul className="list">
-		{articles ? articles.map(item => (
-			<article className="list__item" key={item.id} id={item.id} onClick={toggle}>
-				<li className="list__item__text" >{item.title}</li>
-				<article className="list__item__icon"><CheckCircleIcon className={`list__item__icon list__item__icon--${item.completed}`} /><CancelIcon id={item.id} className="list__item__icon list__item__icon--close" onClick={deleteArticle}/></article>
-			</article>
+		<>
+			<section className="list list--labels">
+				<article className="list__column list__column--title">
+					<h3>Task</h3>
+				</article>
+				<article className="list__column list__column--item">
+					<h3>Remove</h3>
+				</article>
+			</section>
+			<ul className="list">
+			{articles ? articles.map(item => (
+				<article className="list__item list list--labels" key={item.id} id={item.id} onClick={toggle}>
+					<li className="list__item__text list__column"><CheckCircleIcon className={`list__item__icon list__item__icon--${item.completed}`} />{item.title}</li>
+					<article className="list__item__icon list__column" onClick={deleteArticle}><CancelIcon onClick={deleteArticle} id={item.id} className="list__item__icon list__item__icon--close" /></article>
+				</article>
+					)
 				)
-			)
-			: null}
-		</ul>
+				: null}
+			</ul>
+		</>
 	)
 }
 
