@@ -39,10 +39,12 @@
 	}
 
 	&__item {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		width: calc(100% - 20px);
+		height: 75px;
 		margin: 5px 10px;
 		padding: 10px;
 		background-color: white;
@@ -50,31 +52,47 @@
 		cursor: pointer;
 
 		&:hover {
-			background-color: lightblue;
+			background-color: $light;
+		}
+
+		&--true {
+			background-color: $light;
+		}
+
+		li {
+			pointer-events: none;
 		}
 
 		&__icon {
 			transition: all 0.3s ease-in-out;
-			color: grey;
+			cursor: pointer;
+			border: none;
+			background-color: rgba(255,255,255, 0);
 
 			svg {
-
+				color: #b54b41;
+				font-size: 2rem;
 			}
 
 			&--close {
 				transition: all 0.3s ease-in-out;
-				color: grey;
+				color: #b54b41;
+				margin:5px;
+
+				&:active {
+					pointer-events: none;
+				}
 
 				&:hover {
-					color: red;
+					color: #cc4639;
 				}
 			}
 
+			&--false {
+				color:grey;
+			}
 			&--true {
 				color: lightseagreen;
-				&:hover {
-
-				}
 			}
 		}
 
@@ -83,10 +101,29 @@
 			font-family: $paragraph;
 			font-size: 14px;
 			font-weight: 600;
+			pointer-events: none;
+
+			&--true {
+				text-decoration: line-through;
+				text-decoration-color: black;
+			}
 
 			svg {
 				margin-right: 10px;
 			}
+		}
+
+		&__time {
+			position: absolute;
+			top: -2px;
+			right: 0px;
+			width: max-content;
+			margin: 5px;
+			font-family: "Montserrat", sans-serif;
+			font-size: 10px;
+			font-weight: 500;
+			text-transform: uppercase;
+			color: grey;
 		}
 	}
 }

@@ -21,15 +21,18 @@
 
 	button {
     padding: 5px 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 3px;
-    background-color: grey;
+		margin: 10px 0;
+		border: 2px solid $deepsea;
+    border-radius: 5px;
+    background-color:white;
 		transition: all 0.3s ease-in-out;
 		cursor: pointer;
+		color: $deepsea;
+		font-family: $paragraph;
+		text-transform: uppercase;
 
 		&:hover {
-			background-color: lightsteelblue;
+			box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.55);
 		}
 	}
 }

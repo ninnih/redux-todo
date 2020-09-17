@@ -31,20 +31,33 @@
 
 		&__title {
 			margin: 10px;
+			font-family: $header;
+			font-size: 2.5em;
+			font-weight: 500;
+			color: white;
 		}
 
 		&__button {
+			width: 70%;
 			padding: 5px 20px;
-			margin: 10px;
+			margin: 10px 10px 30px 10px;
 			border: none;
 			border-radius: 3px;
-			background-color: teal;
+			background-color: $deepsea;
 			transition: all 0.3s ease-in-out;
 			cursor: pointer;
+			color: white;
+			font-family: $paragraph;
+			text-transform: uppercase;
 
 			&:hover {
-				background-color: grey;
+				box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.55);
 			}
 		}
+	}
+
+	input {
+		height: 23px;
+		width: 70%;
 	}
 }

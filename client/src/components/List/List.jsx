@@ -8,13 +8,39 @@ import CancelIcon from '@material-ui/icons/Cancel';
 const List = () => {
 	const articles = useSelector(state => state)
 	const dispatch = useDispatch()
+	console.log(articles)
 
-	const toggle = (e) => {
-		e.preventDefault()
-		dispatch(toggleTodo(e.target.id))
+	const currentTime = () => {
+		const current = new Date(); 
+		const h = current.getHours();
+		const m = current.getMinutes(); 
+		const s = current.getSeconds(); 
+
+		return `${h}:${m}:${s}`
 	}
 
-	const deleteArticle = (e) => {
+	const toggle = e => {
+		dispatch(toggleTodo({
+			id: e.target.id,
+			time: currentTime()
+		}))
+	}
+	
+	// const move = (index) => {
+	// 	console.log(index)
+	// 	if(index) {
+	// 		articles.push(articles.splice(index, 1)[0]);
+	// 	} 
+	// }
+
+	// const iterate = (item, index) => {
+	// 	if(item.completed) {
+	// 		move(index)
+	// 	}
+	// }
+	// articles.forEach(iterate);
+
+	const deleteArticle = e => {
 		dispatch(deleteTodo(e.target.id))
 	}
 
@@ -30,9 +56,17 @@ const List = () => {
 			</section>
 			<ul className="list">
 			{articles ? articles.map(item => (
-				<article className="list__item list list--labels" key={item.id} id={item.id} onClick={toggle}>
-					<li className="list__item__text list__column"><CheckCircleIcon className={`list__item__icon list__item__icon--${item.completed}`} />{item.title}</li>
-					<article className="list__item__icon list__column" onClick={deleteArticle}><CancelIcon onClick={deleteArticle} id={item.id} className="list__item__icon list__item__icon--close" /></article>
+			<article className={`list__item list__item--${item.completed} list list--labels`} key={item.id} id={item.id} onClick={toggle}>
+					<li>
+						<article className={`list__item__text list__item__text--${item.completed} list__column`}>
+							<CheckCircleIcon className={`list__item__icon list__item__icon--${item.completed}`} />
+							{item.title}
+						</article>
+					</li>
+					<article id={item.id} className="list__item__icon list__column" onClick={deleteArticle}>
+						<CancelIcon id={item.id} className="list__item__icon list__item__icon--close" />
+					</article>
+					{item.completed ? <h4 className="list__item__time">Finished at: {item.time}</h4> : null}
 				</article>
 					)
 				)

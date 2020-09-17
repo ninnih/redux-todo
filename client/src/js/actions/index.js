@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../constants/index';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO, CLEAR_TODO, MOVE_TODO } from '../constants/index';
 
 export const addArticle = payload => {
     return {
@@ -16,9 +16,22 @@ export const toggleTodo = payload => {
 }
 
 export const deleteTodo = payload => {
-    console.log(payload)
     return {
         type: DELETE_TODO,
         payload
     }
 }
+
+export const clearTodos = payload => {
+    return {
+        type: CLEAR_TODO,
+        payload
+    }
+}
+
+// export const moveTodo = payload => {
+//     return {
+//         type: MOVE_TODO,
+//         payload
+//     }
+// }
