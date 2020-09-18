@@ -9,7 +9,7 @@
 	list-style-type: none;
 
 	@media (min-width: $breakpoint-sm) {
-		width: 60%;
+		width: 70%;
 	}
 
 	@media (min-width: $breakpoint-md) {
@@ -33,6 +33,11 @@
 		justify-content: left;
 		align-items: center;
 
+		h3 {
+			text-transform: uppercase;
+			color: grey;
+		}
+
 		&--title {
 			width: 50%;
 		}
@@ -47,6 +52,7 @@
 		height: 75px;
 		margin: 5px 10px;
 		padding: 10px;
+		border-bottom: 2px solid grey;
 		background-color: white;
 		transition: all 0.3s ease-in-out;
 		cursor: pointer;
@@ -57,10 +63,7 @@
 
 		&--true {
 			background-color: $light;
-		}
-
-		li {
-			pointer-events: none;
+			border-bottom: 2px solid $sea;
 		}
 
 		&__icon {
@@ -96,12 +99,17 @@
 			}
 		}
 
-		&__text {
-			text-transform: capitalize;
-			font-family: $paragraph;
-			font-size: 14px;
-			font-weight: 600;
+		&__task {
 			pointer-events: none;
+			margin-left: 5px;
+
+			&__text {
+				text-transform: capitalize;
+				font-family: $paragraph;
+				font-size: 14px;
+				font-weight: 600;
+				pointer-events: none;
+			}
 
 			&--true {
 				text-decoration: line-through;
@@ -110,10 +118,13 @@
 
 			svg {
 				margin-right: 10px;
+				font-size: 1.8rem
 			}
 		}
 
 		&__time {
+			display: flex;
+			align-items: center;
 			position: absolute;
 			top: -2px;
 			right: 0px;
@@ -124,6 +135,58 @@
 			font-weight: 500;
 			text-transform: uppercase;
 			color: grey;
+
+			svg {
+				font-size: 1rem;
+				margin: 0 5px 0 0;
+			}
+		}
+	}
+}
+
+.tools {
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px;
+	display: flex;
+	justify-content: flex-end;
+
+	@media (min-width: $breakpoint-sm) {
+		width: 60%;
+	}
+
+	@media (min-width: $breakpoint-md) {
+		width: 40%;
+	}
+
+	@media (min-width: $breakpoint-lg) {
+		width: 30%;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+    padding: 5px 15px;
+		margin: 10px 0;
+		border: 2px solid $deepsea;
+    border-radius: 5px;
+		background-color: rgba(0,0,0,0);
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+		color: $deepsea;
+		font-family: $paragraph;
+		text-transform: uppercase;
+
+		&--done {
+			margin: 0;
+		}
+
+		&:hover {
+			box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.55);
+		}
+
+		svg {
+			font-size: 1rem
 		}
 	}
 }

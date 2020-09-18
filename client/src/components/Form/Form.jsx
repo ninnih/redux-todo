@@ -1,19 +1,21 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { addArticle } from '../../js/actions/index';
+import { addTask } from '../../js/actions/index';
 import './Form.scss';
+
+import AddIcon from '@material-ui/icons/Add';
 
 const uuid = require('uuid-v4');
 
 export const Form = () => {
+	const dispatch = useDispatch()
+
 	const [input, setInput] = React.useState({ 
 		title: '',
 		id: uuid(),
 		complete: false,
 		error: ''
 	})
-	console.log(input)
-	const dispatch = useDispatch()
  
 	const handleChange = e => {
 		setInput({
@@ -25,26 +27,25 @@ export const Form = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
+
 		if(input.title === '') {
 			setInput({
 				title: '',
 				error: 'Please enter a task!'
 			})
 		} else {
-			dispatch(addArticle(input))
+			dispatch(addTask(input))
 			setInput({
 				title: '',
 				error: ''
-		})
+			})
 		}
 	}
 
 	return (
 		<section className="form">
 			<form onSubmit={handleSubmit} className="form__wrapper">
-				<label htmlFor="title" className="form__wrapper__title">
-					Day planner
-				</label>
+				<label htmlFor="title" className="form__wrapper__title">Day planner</label>
 				<input
 					type="text"
 					id="title"
@@ -52,7 +53,7 @@ export const Form = () => {
 					onChange={handleChange}
           />
 				<h3>{input.error}</h3>
-        <button type="submit" className="form__wrapper__button">Add task</button>
+        <button type="submit" className="form__wrapper__button">Add task <AddIcon/></button>
       </form>
 		</section>
 	)

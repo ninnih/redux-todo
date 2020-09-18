@@ -1,37 +1,34 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO, CLEAR_TODO, MOVE_TODO } from '../constants/index';
+import { 
+    ADD_TASK, 
+    TOGGLE_TASK, 
+    DELETE_TASK, 
+    CLEAR_TASK, 
+} from '../constants/index';
 
-export const addArticle = payload => {
+export const addTask= payload => {
     return {
-        type: ADD_TODO,
+        type: ADD_TASK,
         payload
     }
 }
 
-export const toggleTodo = payload => {
-
+export const toggleTask = payload => {
     return {
-        type: TOGGLE_TODO,
+        type: TOGGLE_TASK,
         payload
     }
 }
 
-export const deleteTodo = payload => {
+export const deleteTask = payload => {
     return {
-        type: DELETE_TODO,
+        type: DELETE_TASK,
         payload
     }
 }
 
-export const clearTodos = payload => {
+export const clearTasks = payload => {
     return {
-        type: CLEAR_TODO,
+        type: CLEAR_TASK,
         payload
     }
 }
-
-// export const moveTodo = payload => {
-//     return {
-//         type: MOVE_TODO,
-//         payload
-//     }
-// }

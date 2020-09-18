@@ -18,7 +18,7 @@
 		border-radius: 3px;
 
 		@media (min-width: $breakpoint-sm) {
-			width: 60%;
+			width: 70%;
 		}
 
 		@media (min-width: $breakpoint-md) {
@@ -30,14 +30,19 @@
 		}
 
 		&__title {
-			margin: 10px;
+			margin: 20px 10px 10px 10px;
 			font-family: $header;
-			font-size: 2.5em;
-			font-weight: 500;
+			font-size: 1.8em;
+			font-weight: 700;
+			text-transform: uppercase;
 			color: white;
+			letter-spacing: 4px;
 		}
 
 		&__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			width: 70%;
 			padding: 5px 20px;
 			margin: 10px 10px 30px 10px;
@@ -53,11 +58,16 @@
 			&:hover {
 				box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.55);
 			}
+
+			svg {
+				font-size: 1rem;
+			}
 		}
 	}
 
 	input {
-		height: 23px;
+		height: 27px;
 		width: 70%;
+		border: none;
 	}
 }

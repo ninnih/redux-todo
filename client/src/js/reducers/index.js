@@ -1,50 +1,51 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO, CLEAR_TODO, MOVE_TODO } from '../constants/index';
+import { 
+	ADD_TASK, 
+	TOGGLE_TASK, 
+	DELETE_TASK, 
+	CLEAR_TASK 
+} from '../constants/index';
 
 const initialState = [];
 
 const rootReducer = (state = initialState, action) => {
+const payload = action.payload;
 
 	switch (action.type) {
-		case ADD_TODO:
+		case ADD_TASK:
 			return [
 				...state, {
-						id: action.payload.id,
-						title: action.payload.title,
+						id: payload.id,
+						title: payload.title,
 						completed: false
 					}
 				]
 
-		case TOGGLE_TODO:
-
-			const iterate = (item, index) => {
-				if(item.id === action.payload.id && !item.completed) {
+		case TOGGLE_TASK:
+			const moveTask = (task, index) => {
+				if (task.id === payload.id && !task.completed) {
 					state.push(state.splice(index, 1)[0]);
-				} else if (item.id === action.payload.id && item.completed) {
+				} else if (task.id === payload.id && task.completed) {
 					state.splice(index, 1)
-					state.unshift(item)
+					state.unshift(task)
 				}
-			}
-			
-			state.forEach(iterate);
+			}		
+			state.forEach(moveTask);
 		
-			return state.map(todo =>
-					todo.id === action.payload.id ? { 
-						...todo, 
-						completed: !todo.completed, 
-						time: action.payload.time 
+			return state.map(task =>
+				task.id === payload.id ? { 
+						...task, 
+						completed: !task.completed, 
+						time: payload.time 
 					} 
-						: todo
+						: task
 				)
 
-		case DELETE_TODO:
-			return state.filter(todo => todo.id !== action.payload);
+		case DELETE_TASK:
+			return state.filter(task => task.id !== payload);
 
-		case CLEAR_TODO:
-			return state.filter(todo => todo.completed !== action.payload)
+		case CLEAR_TASK:
+			return state.filter(task => task.completed !== payload)
 		
-		case MOVE_TODO:
-			return state.push(state.splice(action.payload, 1)[0]);
-
     default:
 			return state;
   }
