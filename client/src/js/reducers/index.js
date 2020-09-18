@@ -17,8 +17,11 @@ const rootReducer = (state = initialState, action) => {
 		case TOGGLE_TODO:
 
 			const iterate = (item, index) => {
-				if(item.id === action.payload.id) {
+				if(item.id === action.payload.id && !item.completed) {
 					state.push(state.splice(index, 1)[0]);
+				} else if (item.id === action.payload.id && item.completed) {
+					state.splice(index, 1)
+					state.unshift(item)
 				}
 			}
 			
