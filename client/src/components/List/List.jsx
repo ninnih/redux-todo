@@ -25,20 +25,6 @@ const List = () => {
 			time: currentTime()
 		}))
 	}
-	
-	// const move = (index) => {
-	// 	console.log(index)
-	// 	if(index) {
-	// 		articles.push(articles.splice(index, 1)[0]);
-	// 	} 
-	// }
-
-	// const iterate = (item, index) => {
-	// 	if(item.completed) {
-	// 		move(index)
-	// 	}
-	// }
-	// articles.forEach(iterate);
 
 	const deleteArticle = e => {
 		dispatch(deleteTodo(e.target.id))

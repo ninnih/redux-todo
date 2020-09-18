@@ -15,6 +15,15 @@ const rootReducer = (state = initialState, action) => {
 				]
 
 		case TOGGLE_TODO:
+
+			const iterate = (item, index) => {
+				if(item.id === action.payload.id) {
+					state.push(state.splice(index, 1)[0]);
+				}
+			}
+			
+			state.forEach(iterate);
+		
 			return state.map(todo =>
 					todo.id === action.payload.id ? { 
 						...todo, 
@@ -30,8 +39,8 @@ const rootReducer = (state = initialState, action) => {
 		case CLEAR_TODO:
 			return state.filter(todo => todo.completed !== action.payload)
 		
-		// case MOVE_TODO:
-		// 	return state.push(state.splice(action.payload, 1)[0]);
+		case MOVE_TODO:
+			return state.push(state.splice(action.payload, 1)[0]);
 
     default:
 			return state;
