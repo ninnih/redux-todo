@@ -1,19 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleTask, deleteTask, clearTasks } from '../../js/actions/index';
+import { toggleTask, deleteTask } from '../../js/actions/index';
 
 import './List.scss'
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const List = () => {
 	const articles = useSelector(state => state)
 	const dispatch = useDispatch()
-
-	const completed = articles.filter(task => task.completed)
 
 	const currentTime = () => {
 		const current = new Date(); 
@@ -43,20 +40,8 @@ const List = () => {
 		dispatch(deleteTask(e.target.id))
 	}
 
-	const clearDone = () => {
-		dispatch(clearTasks(true))
-	}
-
 	return(
-		<section>
-			<section className="list list--labels">
-				<article className="list__column list__column--title">
-					<button className="tools__button tools__button--done">{completed.length}/{articles.length} done</button>
-				</article>
-				<article className="list__column list__column--item">
-					<button className="tools__button" onClick={clearDone}>Clear done<DeleteForeverIcon /></button>
-				</article>
-			</section>
+		<section className="section">
 			<ul className="list">
 			{ articles ? 
 			articles.map(item => (
