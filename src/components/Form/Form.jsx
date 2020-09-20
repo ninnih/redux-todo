@@ -45,7 +45,7 @@ export const Form = () => {
 	return (
 		<section className="form">
 			<form onSubmit={handleSubmit} className="form__wrapper">
-				<label htmlFor="title" className="form__wrapper__title">Day planner</label>
+				<label htmlFor="title" className="form__wrapper__title">Daily planner</label>
 				<input
 					type="text"
 					id="title"

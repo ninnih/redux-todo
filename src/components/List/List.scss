@@ -1,15 +1,21 @@
 @import "../../variables.scss";
 
 .section {
-	margin-top: 280px;
+	margin-top: 250px;
 }
 .list {
 	min-height: 200px;
+	height: 400px;
 	width: 90%;
 	padding: 10px 0;
 	margin: 0 auto;
 	background-color: whitesmoke;
 	list-style-type: none;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-top: 10px solid whitesmoke;
+	border-bottom: 10px solid whitesmoke;
+
 
 	@media (min-width: $breakpoint-sm) {
 		width: 70%;
@@ -58,10 +64,12 @@
 		height: 75px;
 		margin: 5px 10px;
 		padding: 10px;
-		border-bottom: 2px solid grey;
+		border-top: none;
+		border-bottom: 2px solid $light;
 		background-color: white;
 		transition: all 0.3s ease-in-out;
 		cursor: pointer;
+		overflow: hidden;
 
 		&:hover {
 			background-color: $light;
@@ -98,7 +106,7 @@
 			}
 
 			&--false {
-				color:grey;
+				color:lightsteelblue;
 			}
 			&--true {
 				color: lightseagreen;
@@ -115,11 +123,12 @@
 				font-size: 14px;
 				font-weight: 600;
 				pointer-events: none;
-			}
 
-			&--true {
-				text-decoration: line-through;
-				text-decoration-color: black;
+				&--true {
+					color: grey;
+					text-decoration: line-through;
+					text-decoration-color: grey;
+				}
 			}
 
 			svg {
@@ -150,49 +159,18 @@
 	}
 }
 
-.tools {
-	width: 90%;
-	margin: 0 auto;
-	padding: 10px;
-	display: flex;
-	justify-content: flex-end;
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-	@media (min-width: $breakpoint-sm) {
-		width: 60%;
-	}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-	@media (min-width: $breakpoint-md) {
-		width: 40%;
-	}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
 
-	@media (min-width: $breakpoint-lg) {
-		width: 30%;
-	}
-
-	&__button {
-		display: flex;
-		align-items: center;
-    padding: 5px 15px;
-		margin: 10px 0;
-		border: 2px solid $deepsea;
-    border-radius: 5px;
-		background-color: rgba(0,0,0,0);
-		transition: all 0.3s ease-in-out;
-		cursor: pointer;
-		color: $deepsea;
-		font-family: $paragraph;
-		text-transform: uppercase;
-
-		&--done {
-			margin: 0;
-		}
-
-		&:hover {
-			box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.55);
-		}
-
-		svg {
-			font-size: 1rem
-		}
-	}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

@@ -4,14 +4,60 @@
 	position: fixed;
 	top: 0;
 	z-index: 40000;
-	margin: 200px auto 0 auto;
+	margin: 190px auto 0 auto;
 	background-color: white;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
+	&__done{
+		width: 90%;
+		height: 50px;
+    display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media (min-width: $breakpoint-sm) {
+			width: 70%;
+		}
+	
+		@media (min-width: $breakpoint-md) {
+			width: 40%;
+		}
+	
+		@media (min-width: $breakpoint-lg) {
+			width: 30%;
+		}
+	}
+
 	&__button {
-		margin: 0px 5px
+		display: flex;
+		align-items: center;
+    padding: 5px 15px;
+		margin: 10px;
+		border: 2px solid $deepsea;
+    border-radius: 5px;
+		background-color: rgba(0, 0, 0, 0);
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+		color: $deepsea;
+		font-family: $paragraph;
+		text-transform: uppercase;
+
+		&--done {
+			background-color: #e7e6ea;
+			border: 2px solid #e7e6ea;
+		}
+
+		&--clear {
+			&:hover {
+				box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.55);
+			}
+		}
+
+		svg {
+			font-size: 1rem
+		}
 	}
 }

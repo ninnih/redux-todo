@@ -9,8 +9,8 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 
 const List = () => {
-	const articles = useSelector(state => state)
-	const dispatch = useDispatch()
+	const articles = useSelector(state => state);
+	const dispatch = useDispatch();
 
 	const currentTime = () => {
 		const current = new Date(); 
@@ -39,6 +39,8 @@ const List = () => {
 	const deleteArticle = e => {
 		dispatch(deleteTask(e.target.id))
 	}
+
+
 
 	return(
 		<section className="section">
