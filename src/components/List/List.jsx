@@ -19,7 +19,7 @@ const List = () => {
 		let s = current.getSeconds(); 
 
 		if(m < 10){
-			m = `0${s}`
+			m = `0${m}`
 		}
 
 		if(s < 10){
