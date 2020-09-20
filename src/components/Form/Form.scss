@@ -20,7 +20,7 @@
 		width: 90%;
 		margin: 0 auto;
 		background: rgb(32,178,170);
-background: linear-gradient(32deg, rgba(32,178,170,1) 0%, rgba(124,45,253,0.5) 100%);
+		background: linear-gradient(32deg, rgba(32,178,170,1) 0%, rgba(124,45,253,0.5) 100%);
 		border-radius: 3px;
 
 		@media (min-width: $breakpoint-sm) {
@@ -38,11 +38,15 @@ background: linear-gradient(32deg, rgba(32,178,170,1) 0%, rgba(124,45,253,0.5) 1
 		&__title {
 			margin: 20px 10px 10px 10px;
 			font-family: $header;
-			font-size: 1.8em;
+			font-size: 1em;
 			font-weight: 700;
 			text-transform: uppercase;
 			color: white;
 			letter-spacing: 4px;
+
+			@media (min-width: $breakpoint-md) {
+				font-size: 1.8em;
+			}
 		}
 
 		&__button {
