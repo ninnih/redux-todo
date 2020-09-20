@@ -9,6 +9,5 @@ Built using Create-react-app, Redux, Local Storage and sass.
 Run npm start to view the application in localhost:3000
 
 ### `Images`
-![Added tasks](https://github.com/ninnih/redux-todo/blob/master/readme/added.PNG)
 ![Multiple tasks](https://github.com/ninnih/redux-todo/blob/master/readme/todo.PNG)
 ![Tasks marked done](https://github.com/ninnih/redux-todo/blob/master/readme/done.PNG)
