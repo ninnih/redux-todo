@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearTasks } from '../../js/actions/index';
 
 import './Tools.scss';
+
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const Tools = () => {
-	const articles = useSelector(state => state)
-	const completed = articles.filter(task => task.completed)
-	const dispatch = useDispatch()
+	const articles = useSelector(state => state);
+	const completed = articles.filter(task => task.completed);
+	const dispatch = useDispatch();
 
 	const clearDone = () => {
-		dispatch(clearTasks(true))
+		dispatch(clearTasks(true));
 	}
 
 	return (

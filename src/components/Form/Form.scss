@@ -17,14 +17,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 90%;
+		width: 95%;
 		margin: 0 auto;
 		background: rgb(32,178,170);
 		background: linear-gradient(32deg, rgba(32,178,170,1) 0%, rgba(124,45,253,0.5) 100%);
 		border-radius: 3px;
 
 		@media (min-width: $breakpoint-sm) {
-			width: 70%;
+			width: 80%;
 		}
 
 		@media (min-width: $breakpoint-md) {

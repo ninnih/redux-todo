@@ -4,25 +4,30 @@
 	position: fixed;
 	top: 0;
 	z-index: 40000;
-	margin: 190px auto 0 auto;
+	margin: 165px auto 0 auto;
 	background-color: white;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
+	@media (min-width: $breakpoint-md) {
+		margin: 190px auto 0 auto;
+	}
+
 	&__done{
-		width: 90%;
-		height: 50px;
+		width: 95%;
+		height: 80px;
     display: flex;
 		align-items: center;
 		justify-content: space-between;
 
 		@media (min-width: $breakpoint-sm) {
-			width: 70%;
+			width: 80%;
 		}
 	
 		@media (min-width: $breakpoint-md) {
+			height: 50px;
 			width: 40%;
 		}
 	
@@ -35,7 +40,7 @@
 		display: flex;
 		align-items: center;
     padding: 5px 15px;
-		margin: 10px;
+		margin: 5px;
 		border: 2px solid $deepsea;
     border-radius: 5px;
 		background-color: rgba(0, 0, 0, 0);
@@ -43,7 +48,13 @@
 		cursor: pointer;
 		color: $deepsea;
 		font-family: $paragraph;
+		font-size: 10px;
 		text-transform: uppercase;
+
+		@media (min-width: $breakpoint-md) {
+			margin: 10px;
+			font-size: 14px;
+		}
 
 		&--done {
 			background-color: #e7e6ea;

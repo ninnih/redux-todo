@@ -19,7 +19,6 @@
     "react-scripts": "3.4.3",
     "sass": "^1.26.10",
     "uuid-v4": "^0.1.0",
-    "uuidv4": "^6.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

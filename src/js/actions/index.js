@@ -5,7 +5,7 @@ import {
     CLEAR_TASK, 
 } from '../constants/index';
 
-export const addTask= payload => {
+export const addTask = payload => {
     return {
         type: ADD_TASK,
         payload

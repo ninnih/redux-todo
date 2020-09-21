@@ -6,7 +6,7 @@
 .list {
 	min-height: 200px;
 	height: 400px;
-	width: 90%;
+	width: 95%;
 	padding: 10px 0;
 	margin: 0 auto;
 	background-color: whitesmoke;
@@ -16,9 +16,8 @@
 	border-top: 10px solid whitesmoke;
 	border-bottom: 10px solid whitesmoke;
 
-
 	@media (min-width: $breakpoint-sm) {
-		width: 70%;
+		width: 80%;
 	}
 
 	@media (min-width: $breakpoint-md) {

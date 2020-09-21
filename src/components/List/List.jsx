@@ -19,22 +19,22 @@ const List = () => {
 		let s = current.getSeconds(); 
 
 		if(m < 10){
-			m = `0${m}`
+			m = `0${m}`;
 		}
 
 		if(s < 10){
-			s = `0${s}`
+			s = `0${s}`;
 		}
 
-		return `${h}:${m}:${s}`
+		return `${h}:${m}:${s}`;
 	}
 
 	const toggleDone = e => {
 		dispatch(toggleTask({
 			id: e.target.id,
 			time: currentTime()
-		}))
-	}
+		})
+	)}
 
 	const deleteArticle = e => {
 		dispatch(deleteTask(e.target.id))

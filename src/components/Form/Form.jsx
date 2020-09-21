@@ -1,5 +1,5 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { addTask } from '../../js/actions/index';
 import './Form.scss';
 
@@ -8,14 +8,14 @@ import AddIcon from '@material-ui/icons/Add';
 const uuid = require('uuid-v4');
 
 export const Form = () => {
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
 	const [input, setInput] = React.useState({ 
 		title: '',
 		id: uuid(),
 		complete: false,
 		error: ''
-	})
+	});
  
 	const handleChange = e => {
 		setInput({
